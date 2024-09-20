@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Copy as Twitter",
+    "version": "1.0",
+    "permissions": [
+      "contextMenus",
+      "activeTab",
+      "clipboardWrite",
+      "tabs"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "icons": {
+      "48": "icon.png"
+    },
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "copy-as-twitter@example.com"
+      }
+    }
+  }
+  
