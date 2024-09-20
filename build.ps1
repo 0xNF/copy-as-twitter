@@ -1,7 +1,7 @@
 $addon_name = "copy-as-twitter"
 # Define the files to zip and the output file name
-$filesToZip = "src"
-$outDir = "dist"
+$srcDir = "src"
+$outDir = "$PSScriptRoot\dist"
 $outputZip = "$outDir\$addon_name.xpi"
 
 if (-Not (Test-Path $outDir)) {
@@ -9,7 +9,8 @@ if (-Not (Test-Path $outDir)) {
 }
 
 # Create the zip archive
-Compress-Archive -Path $filesToZip -DestinationPath $outputZip -Force
+Push-Location $srcDir
+Compress-Archive -Path ".\*" -DestinationPath $outputZip -Force
+Pop-Location
 
-# Optional: Output a success message
 Write-Host "Files zipped and renamed to $outputZip"
